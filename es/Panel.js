@@ -123,9 +123,9 @@ var Panel = function (_Component) {
           minuteStep = _props.minuteStep,
           secondStep = _props.secondStep,
           inputReadOnly = _props.inputReadOnly,
-          hourLengthOptions = _props.hourLengthOptions,
-          minuteLengthOptions = _props.minuteLengthOptions,
-          secondLengthOptions = _props.secondLengthOptions;
+          hourLength = _props.hourLength,
+          minuteLength = _props.minuteLength,
+          secondLength = _props.secondLength;
       var _state = this.state,
           value = _state.value,
           currentSelectPanel = _state.currentSelectPanel;
@@ -133,9 +133,9 @@ var Panel = function (_Component) {
       var disabledHourOptions = this.disabledHours();
       var disabledMinuteOptions = disabledMinutes(value ? value.hour() : null);
       var disabledSecondOptions = disabledSeconds(value ? value.hour() : null, value ? value.minute() : null);
-      var hourOptions = generateOptions(hourLengthOptions, disabledHourOptions, hideDisabledOptions, hourStep);
-      var minuteOptions = generateOptions(minuteLengthOptions, disabledMinuteOptions, hideDisabledOptions, minuteStep);
-      var secondOptions = generateOptions(secondLengthOptions, disabledSecondOptions, hideDisabledOptions, secondStep);
+      var hourOptions = generateOptions(hourLength, disabledHourOptions, hideDisabledOptions, hourStep);
+      var minuteOptions = generateOptions(minuteLength, disabledMinuteOptions, hideDisabledOptions, minuteStep);
+      var secondOptions = generateOptions(secondLength, disabledSecondOptions, hideDisabledOptions, secondStep);
 
       return React.createElement(
         'div',
@@ -216,9 +216,9 @@ Panel.propTypes = {
   addon: PropTypes.func,
   focusOnOpen: PropTypes.bool,
   onKeyDown: PropTypes.func,
-  hourLengthOptions: PropTypes.number,
-  minuteLengthOptions: PropTypes.number,
-  secondLengthOptions: PropTypes.number
+  hourLength: PropTypes.number,
+  minuteLength: PropTypes.number,
+  secondLength: PropTypes.number
 };
 Panel.defaultProps = {
   prefixCls: 'rc-time-picker-panel',
@@ -232,9 +232,9 @@ Panel.defaultProps = {
   addon: noop,
   onKeyDown: noop,
   inputReadOnly: false,
-  hourLengthOptions: 24,
-  minuteLengthOptions: 60,
-  secondLengthOptions: 60
+  hourLength: 24,
+  minuteLength: 60,
+  secondLength: 60
 };
 
 

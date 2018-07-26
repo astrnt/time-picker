@@ -46,9 +46,9 @@ class Panel extends Component {
     addon: PropTypes.func,
     focusOnOpen: PropTypes.bool,
     onKeyDown: PropTypes.func,
-    hourLengthOptions: PropTypes.number,
-    minuteLengthOptions: PropTypes.number,
-    secondLengthOptions: PropTypes.number
+    hourLength: PropTypes.number,
+    minuteLength: PropTypes.number,
+    secondLength: PropTypes.number
   };
 
   static defaultProps = {
@@ -63,9 +63,9 @@ class Panel extends Component {
     addon: noop,
     onKeyDown: noop,
     inputReadOnly: false,
-    hourLengthOptions: 24,
-    minuteLengthOptions: 60,
-    secondLengthOptions: 60
+    hourLength: 24,
+    minuteLength: 60,
+    secondLength: 60
   };
 
   constructor(props) {
@@ -123,7 +123,7 @@ class Panel extends Component {
       disabledSeconds, hideDisabledOptions, allowEmpty, showHour, showMinute, showSecond,
       format, defaultOpenValue, clearText, onEsc, addon, use12Hours, onClear,
       focusOnOpen, onKeyDown, hourStep, minuteStep, secondStep, inputReadOnly,
-      hourLengthOptions, minuteLengthOptions, secondLengthOptions
+      hourLength, minuteLength, secondLength
     } = this.props;
     const {
       value, currentSelectPanel,
@@ -133,13 +133,13 @@ class Panel extends Component {
     const disabledSecondOptions = disabledSeconds(value ? value.hour() : null,
       value ? value.minute() : null);
     const hourOptions = generateOptions(
-      hourLengthOptions, disabledHourOptions, hideDisabledOptions, hourStep
+      hourLength, disabledHourOptions, hideDisabledOptions, hourStep
     );
     const minuteOptions = generateOptions(
-      minuteLengthOptions, disabledMinuteOptions, hideDisabledOptions, minuteStep
+      minuteLength, disabledMinuteOptions, hideDisabledOptions, minuteStep
     );
     const secondOptions = generateOptions(
-      secondLengthOptions, disabledSecondOptions, hideDisabledOptions, secondStep
+      secondLength, disabledSecondOptions, hideDisabledOptions, secondStep
     );
 
     return (

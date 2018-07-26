@@ -116,9 +116,9 @@ var Picker = function (_Component) {
           hourStep = _props2.hourStep,
           minuteStep = _props2.minuteStep,
           secondStep = _props2.secondStep,
-          hourLengthOptions = _props2.hourLengthOptions,
-          minuteLengthOptions = _props2.minuteLengthOptions,
-          secondLengthOptions = _props2.secondLengthOptions;
+          hourLength = _props2.hourLength,
+          minuteLength = _props2.minuteLength,
+          secondLength = _props2.secondLength;
 
       return React.createElement(Panel, {
         clearText: clearText,
@@ -147,9 +147,9 @@ var Picker = function (_Component) {
         addon: addon,
         focusOnOpen: focusOnOpen,
         onKeyDown: onKeyDown,
-        hourLengthOptions: hourLengthOptions,
-        minuteLengthOptions: minuteLengthOptions,
-        secondLengthOptions: secondLengthOptions
+        hourLength: hourLength,
+        minuteLength: minuteLength,
+        secondLength: secondLength
       });
     }
   }, {
@@ -324,9 +324,9 @@ Picker.propTypes = {
   onKeyDown: PropTypes.func,
   autoFocus: PropTypes.bool,
   id: PropTypes.string,
-  hourLengthOptions: PropTypes.number,
-  minuteLengthOptions: PropTypes.number,
-  secondLengthOptions: PropTypes.number
+  hourLength: PropTypes.number,
+  minuteLength: PropTypes.number,
+  secondLength: PropTypes.number
 };
 Picker.defaultProps = {
   clearText: 'clear',
